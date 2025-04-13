@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Puzzle Solver</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <!-- Topo Simplificado -->
+    <div class="top-container">
+      <h1 class="app-title">Bitcoin Puzzle Challenge</h1>
+      <p class="puzzle-instruction">
+        Bem-vindo ao Puzzle de Bitcoin! Insira o endereço alvo e defina o
+        intervalo (em hex) para tentar encontrar a chave privada. Lembre-se de
+        que este projeto é apenas educacional. Use por sua conta e risco.
+      </p>
+    </div>
+
+    <!-- Header com 3 Colunas -->
+    <header class="header">
+      <!-- Coluna 1: Parâmetros de Busca -->
+      <div class="header-col" id="searchParameters">
+        <h2>Parâmetros de Busca</h2>
+        <div class="form-group">
+          <label for="btcAddress">Endereço BTC (Compressed)</label>
+          <input
+            type="text"
+            id="btcAddress"
+            placeholder="Ex: 15JhYXn6Mx3oF4Y7PcTAv2wVVAuCFFQNiP"
+          />
+        </div>
+        <div class="form-group">
+          <label for="startKey">Valor Inicial (hex)</label>
+          <input type="text" id="startKey" placeholder="Ex: 1000000" />
+        </div>
+        <div class="form-group">
+          <label for="endKey">Valor Final (hex)</label>
+          <input type="text" id="endKey" placeholder="Ex: 1ffffff" />
+        </div>
+        <div class="form-group">
+          <label for="threads">Número de Threads</label>
+          <input type="number" id="threads" value="1" />
+        </div>
+        <div class="form-group">
+          <label for="scanTime">Tempo de Scan (segundos, opcional)</label>
+          <input
+            type="number"
+            id="scanTime"
+            placeholder="Deixe em branco para executar até parar"
+          />
+        </div>
+        <div class="button-group">
+          <button id="startBtn" class="btn btn-primary">Iniciar Busca</button>
+          <button id="stopBtn" class="btn btn-danger">Parar Busca</button>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Configurações Avançadas -->
+      <div class="header-col" id="advancedSettings">
+        <h2>Configurações Avançadas</h2>
+        <div class="form-group">
+          <label for="modeSelect">Modo de Cálculo</label>
+          <select id="modeSelect">
+            <option value="sequential">Sequencial</option>
+            <option value="aleatorio">Aleatório</option>
+            <option value="interval">Intervalo</option>
+            <option value="smart">Smart</option>
+          </select>
+        </div>
+        <!-- Seletor de Desafios Pré-Configurados -->
+        <div class="form-group">
+          <label for="puzzleSelect">Desafios Pré-configurados</label>
+          <select id="puzzleSelect">
+            <option value="">Selecione um Puzzle</option>
+            <option value="puzzle25">#Puzzle25</option>
+            <option value="puzzle69">#Puzzle69</option>
+          </select>
+        </div>
+        <!-- Campo para exibir chaves pesquisadas (altura aumentada) -->
+        <div class="form-group flex-fill" style="flex:1;">
+          <label>Chaves Pesquisadas:</label>
+          <div id="searchedKeys" class="searched-keys"></div>
+        </div>
+      </div>
+
+      <!-- Coluna 3: Estatísticas -->
+      <div class="header-col" id="statistics">
+        <h2>Estatísticas</h2>
+        <div class="stat">
+          <span>Chaves Verificadas:</span>
+          <span id="checkedKeys">0</span>
+        </div>
+        <div class="stat">
+          <span>Chance de Sucesso:</span>
+          <span id="chanceSuccess">0%</span>
+        </div>
+        <div class="stat">
+          <span>Tempo Decorrido:</span>
+          <span id="timeElapsed">0s</span>
+        </div>
+        <div class="stat">
+          <span>Chave Privada Encontrada:</span>
+          <span id="foundAddress">-</span>
+        </div>
+        <div class="stat">
+          <span>Última Chave Pesquisada:</span>
+          <span id="lastSearchedKey">-</span>
+        </div>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #4a5568;" />
+        <div class="stat">
+          <span>Total Possibilidades:</span>
+          <span id="totalPossibilities">-</span>
+        </div>
+        <div class="stat">
+          <span>Velocidade (keys/s):</span>
+          <span id="scanSpeed">-</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área de Log de Atividade -->
+    <main class="container log-container">
+      <section id="logSection" class="panel">
+        <h2>Log de Atividade</h2>
+        <pre id="activityLog"></pre>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p><strong>Aviso de Segurança:</strong> Não compartilhe suas chaves privadas e use apenas endereços de teste.</p>
+      <p><strong>Privacidade:</strong> Este aplicativo não envia dados para servidores. Todas as operações são locais.</p>
+      <p><strong>Disclaimer:</strong> Projeto experimental para fins educacionais. Use por sua conta e risco.</p>
+    </footer>
+
+    <!-- Inclusão das Bibliotecas e Script Principal -->
+    <script src="crypto-js.min.js"></script>
+    <script src="elliptic.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

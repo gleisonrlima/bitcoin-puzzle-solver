@@ -1,0 +1,205 @@
+/* Reset Básico */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+/* Corpo */
+body {
+	font-family: Arial, sans-serif;
+	background: #1f2937;
+	color: #f9fafb;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Área central com largura máxima */
+.top-container,
+.header,
+.container,
+.footer {
+	width: 95%;
+	max-width: 1440px; /* Mantém a página larga */
+	margin: 0 auto;
+}
+
+/* Topo Simplificado */
+.top-container {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 0 20px;
+}
+.app-title {
+	font-size: 1.8rem;
+	color: #38bdf8;
+	margin-bottom: 10px;
+}
+.puzzle-instruction {
+	font-size: 0.9rem;
+	color: #e2e8f0;
+	margin-bottom: 20px;
+}
+
+/* Header com 3 Colunas */
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: #2d3748;
+	padding: 20px;
+	border-bottom: 2px solid #4a5568;
+	border-radius: 6px;
+}
+.header-col {
+	flex: 1;
+	min-width: 320px;
+	padding: 10px 20px;
+	border-right: 1px solid #4a5568;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.header-col:last-child {
+	border-right: none;
+}
+.header-col h2 {
+	font-size: 1.1rem;
+	margin-bottom: 12px;
+	color: #38bdf8;
+}
+
+/* Formulários e Botões */
+.form-group {
+	margin-bottom: 12px;
+}
+.form-group label {
+	display: block;
+	font-size: 0.9rem;
+	margin-bottom: 5px;
+}
+.form-group input,
+.form-group select {
+	width: 100%;
+	padding: 8px;
+	border: none;
+	border-radius: 4px;
+	font-size: 0.9rem;
+}
+.button-group {
+	display: flex;
+	gap: 10px;
+}
+.btn {
+	padding: 8px 12px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+.btn-primary {
+	background: #38bdf8;
+	color: #1f2937;
+}
+.btn-primary:hover {
+	background: #0ea5e9;
+}
+.btn-danger {
+	background: #f44336;
+	color: #fff;
+}
+.btn-danger:hover {
+	background: #d32f2f;
+}
+
+/* Área para exibir chaves pesquisadas */
+.searched-keys {
+	background: #1a202c;
+	padding: 5px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	min-height: 80px; /* Aumento da altura */
+	max-height: 250px;
+	overflow-y: auto;
+	margin-top: 5px;
+}
+
+/* Estatísticas */
+.stat {
+	margin-bottom: 8px;
+	font-size: 0.85rem;
+	display: flex;
+	justify-content: space-between;
+}
+.stat span:first-child {
+	font-weight: bold;
+}
+
+/* Área de Log e Container Principal */
+.container {
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.panel {
+	background: #2d3748;
+	padding: 20px;
+	border-radius: 8px;
+	margin-top: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.panel h2 {
+	margin-bottom: 15px;
+	font-size: 1.1rem;
+	color: #38bdf8;
+}
+.log-container {
+	align-self: center; /* Centraliza horizontalmente */
+	width: 95%;
+	max-width: 1480px;
+}
+#activityLog {
+	background: #1a202c;
+	padding: 10px;
+	height: 250px; /* Ajustado para manter proporção com resto da página */
+	overflow-y: auto;
+	border-radius: 4px;
+	font-family: monospace;
+	font-size: 0.8rem;
+}
+
+/* Rodapé */
+.footer {
+	background: #2d3748;
+	border-top: 1px solid #4a5568;
+	padding: 15px;
+	width: 95%;
+	max-width: 1440px;
+	border-radius: 6px 6px 0 0;
+	text-align: center;
+	margin-top: auto;
+}
+.footer p {
+	margin-bottom: 8px;
+	font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+	.header {
+		flex-direction: column;
+	}
+	.header-col {
+		border-right: none;
+		border-bottom: 1px solid #4a5568;
+	}
+	.header-col:last-child {
+		border-bottom: none;
+	}
+}
