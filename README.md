@@ -1,4 +1,5 @@
 # Bitcoin Puzzle Solver
+1. Acesse e tente a sorte: https://gleisonrlima.github.io/bitcoin-puzzle-solver/
 
 Aplicação web para tentativas de resolver puzzles públicos de Bitcoin, buscando chaves privadas associadas a endereços **Compressed**.
 
@@ -31,4 +32,10 @@ Aplicação web para tentativas de resolver puzzles públicos de Bitcoin, buscan
 4. Acesse a URL fornecida pelo GitHub Pages.
 
 ## Estrutura do Projeto
-
+bitcoin-puzzle-solver/
+├── index.html
+├── style.css
+├── app.js
+├── crypto-js.min.js
+├── elliptic.min.js
+└── README.md
