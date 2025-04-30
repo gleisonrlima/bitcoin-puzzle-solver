@@ -57,10 +57,10 @@ function fillPuzzleParams() {
 		btcAddressEl.value = "15JhYXn6Mx3oF4Y7PcTAv2wVVAuCFFQNiP";
 		startKeyEl.value = "1000000";
 		endKeyEl.value = "1ffffff";
-	} else if (puzzle === "puzzle69") {
-		btcAddressEl.value = "19vkiEajfhuZ8bs8Zu2jgmC6oqZbWqhxhG";
-		startKeyEl.value = "100000000000000000";
-		endKeyEl.value = "1fffffffffffffffff";
+	} else if (puzzle === "puzzle71") {
+		btcAddressEl.value = "1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU";
+		startKeyEl.value = "400000000000000000";
+		endKeyEl.value = "7fffffffffffffffff";
 	}
 }
 
